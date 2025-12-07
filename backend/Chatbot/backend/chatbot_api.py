@@ -35,6 +35,12 @@ def initialize_bot(user_id=None, force_reinit=False):
         # Load API key
         api_key = os.getenv('GEMINI_API_KEY')
         
+        # Debug: Check if API key is in environment
+        if api_key:
+            print(f"✅ API key loaded from environment (length: {len(api_key)})", file=sys.stderr)
+        else:
+            print("⚠️ API key not in environment, trying .env file", file=sys.stderr)
+        
         if not api_key:
             try:
                 env_path = os.path.join(project_root, '.env')
@@ -42,20 +48,23 @@ def initialize_bot(user_id=None, force_reinit=False):
                     for line in f:
                         if line.startswith('GEMINI_API_KEY='):
                             api_key = line.split('=', 1)[1].strip()
+                            print(f"✅ API key loaded from .env file", file=sys.stderr)
                             break
-            except:
-                pass
+            except Exception as e:
+                print(f"⚠️ Could not read .env file: {e}", file=sys.stderr)
         
         if not api_key:
             try:
                 from config import load_api_key
                 api_key = load_api_key()
-            except Exception:
-                pass
+                if api_key:
+                    print(f"✅ API key loaded from config.py", file=sys.stderr)
+            except Exception as e:
+                print(f"⚠️ Could not load from config.py: {e}", file=sys.stderr)
         
         if not api_key:
             sys.stdout = old_stdout
-            print("❌ No API key found!", file=sys.stderr)
+            print("❌ No API key found in any source!", file=sys.stderr)
             return False
         
         # Load MongoDB config

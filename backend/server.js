@@ -67,9 +67,10 @@ const __dirname = path.resolve();
 // Serve static files from frontend build - MUST come after API routes
 app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
-    // app.get("*", (req, res) => {
-    //     res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"))
-    // });
+// Catch-all route to serve React app for any non-API routes
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"))
+});
 
 server.listen(PORT, () => {
     connectDB()

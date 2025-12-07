@@ -20,10 +20,8 @@ function startPythonProcess() {
     const scriptPath = path.join(__dirname, '..', 'Chatbot', 'backend', 'chatbot_api.py');
     const chatbotEnvPath = path.join(__dirname, '..', 'Chatbot', '.env');
     
-    // Load environment variables - Railway env vars take precedence over .env file
-    const envVars = {};
-    
-    // First load from Chatbot/.env file (for local development)
+    // Load environment variables from Chatbot/.env
+    const envVars = { ...process.env };
     try {
         if (fs.existsSync(chatbotEnvPath)) {
             const envContent = fs.readFileSync(chatbotEnvPath, 'utf8');
@@ -42,29 +40,7 @@ function startPythonProcess() {
         console.error('⚠️ Could not load Chatbot/.env:', error.message);
     }
     
-    // Override with Railway environment variables (takes precedence)
-    Object.assign(envVars, process.env);
-    
-    // Log if GEMINI_API_KEY is present (without showing the actual key)
-    if (envVars.GEMINI_API_KEY) {
-        console.log('✅ GEMINI_API_KEY is set');
-    } else {
-        console.error('❌ GEMINI_API_KEY is missing!');
-    }
-    
-    // Use virtual environment Python if available (Railway deployment)
-    const venvPython = '/opt/venv/bin/python';
-    const pythonCmd = fs.existsSync(venvPython) ? venvPython : 'python';
-    
-    // Set Python path to include venv site-packages
-    if (fs.existsSync(venvPython)) {
-        const venvSitePackages = '/opt/venv/lib/python3.11/site-packages';
-        envVars.PYTHONPATH = venvSitePackages + (envVars.PYTHONPATH ? ':' + envVars.PYTHONPATH : '');
-        envVars.VIRTUAL_ENV = '/opt/venv';
-        envVars.PATH = '/opt/venv/bin:' + (envVars.PATH || '');
-    }
-    
-    pythonProcess = spawn(pythonCmd, [scriptPath], {
+    pythonProcess = spawn('python', [scriptPath], {
         env: envVars,
         cwd: path.join(__dirname, '..', 'Chatbot')
     });
@@ -100,13 +76,7 @@ function startPythonProcess() {
     });
     
     pythonProcess.stderr.on('data', (data) => {
-        const errorMsg = data.toString();
-        console.error('Python error:', errorMsg);
-        
-        // Log specific import errors for debugging
-        if (errorMsg.includes('ModuleNotFoundError') || errorMsg.includes('ImportError')) {
-            console.error('⚠️ Python package missing! Check if pip install ran successfully.');
-        }
+        console.error('Python error:', data.toString());
     });
     
     pythonProcess.on('close', (code) => {

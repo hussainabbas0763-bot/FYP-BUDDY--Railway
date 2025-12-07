@@ -1,9 +1,6 @@
 # Python virtual environment setup for chatbot dependencies
 [phases.setup]
-nixPkgs = ["nodejs_22", "python311", "python311Packages.pip", "python311Packages.virtualenv", "stdenv.cc.cc.lib"]
-
-[variables]
-LD_LIBRARY_PATH = "/nix/store/*-gcc-*-lib/lib:$LD_LIBRARY_PATH"
+nixPkgs = ["nodejs_22", "python311", "python311Packages.pip", "python311Packages.virtualenv", "gcc-unwrapped", "glibc"]
 
 [phases.install]
 cmds = [
@@ -16,6 +13,11 @@ cmds = [
 cmds = [
   "npm run build --prefix frontend",
   ". /opt/venv/bin/activate && pip install -r backend/Chatbot/requirements.txt"
+]
+
+[phases.postBuild]
+cmds = [
+  "echo 'export LD_LIBRARY_PATH=$(dirname $(find /nix/store -name \"libstdc++.so.6\" 2>/dev/null | head -1)):$LD_LIBRARY_PATH' >> /opt/venv/bin/activate"
 ]
 
 [start]

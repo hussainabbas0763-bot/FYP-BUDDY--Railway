@@ -1,3 +1,4 @@
+# Python virtual environment setup for chatbot dependencies
 [phases.setup]
 nixPkgs = ["nodejs_22", "python311", "python311Packages.pip", "python311Packages.virtualenv"]
 

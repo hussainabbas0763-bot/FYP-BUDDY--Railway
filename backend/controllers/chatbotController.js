@@ -40,7 +40,10 @@ function startPythonProcess() {
         console.error('⚠️ Could not load Chatbot/.env:', error.message);
     }
     
-    pythonProcess = spawn('python', [scriptPath], {
+    // Use python3 on Linux/Railway, python on Windows
+    const pythonCmd = process.platform === 'win32' ? 'python' : 'python3';
+    
+    pythonProcess = spawn(pythonCmd, [scriptPath], {
         env: envVars,
         cwd: path.join(__dirname, '..', 'Chatbot')
     });

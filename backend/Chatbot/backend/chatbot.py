@@ -29,6 +29,8 @@ class GeminiProjectChatbotV2:
         self.use_gemini = False
         if GEMINI_AVAILABLE and api_key:
             try:
+                import sys
+                print(f"🔧 Configuring Gemini with API key (length: {len(api_key) if api_key else 0})...", file=sys.stderr)
                 genai.configure(api_key=api_key)
                 # Try different model names
                 # Don't test during init to save quota
@@ -36,27 +38,35 @@ class GeminiProjectChatbotV2:
                 
                 for model_name in model_names:
                     try:
+                        print(f"🔧 Trying model: {model_name}", file=sys.stderr)
                         self.model = genai.GenerativeModel(model_name)
                         # Skip test call to save quota
                         self.use_gemini = True
-                        import sys
                         print(f"✅ Gemini AI initialized (using {model_name})", file=sys.stderr)
                         break
                     except Exception as model_error:
+                        print(f"⚠️ Model {model_name} failed: {model_error}", file=sys.stderr)
                         if "not found" in str(model_error).lower():
                             continue
                         else:
                             raise model_error
                 
                 if not self.use_gemini:
-                    print("⚠️ No compatible Gemini model found")
+                    print("❌ No compatible Gemini model found", file=sys.stderr)
                     
             except Exception as e:
                 import sys
-                print(f"Gemini initialization failed: {e}", file=sys.stderr)
+                print(f"❌ Gemini initialization failed: {e}", file=sys.stderr)
                 self.use_gemini = False
+        elif not GEMINI_AVAILABLE:
+            import sys
+            print("❌ google-generativeai package not available", file=sys.stderr)
+        elif not api_key:
+            import sys
+            print("❌ No API key provided to chatbot", file=sys.stderr)
         else:
-            print("⚠️ Running in fallback mode (rule-based only)")
+            import sys
+            print("⚠️ Running in fallback mode (rule-based only)", file=sys.stderr)
 
     def load_model(self):
         try:

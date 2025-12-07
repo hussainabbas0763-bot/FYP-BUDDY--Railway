@@ -81,12 +81,17 @@ def initialize_bot(user_id=None, force_reinit=False):
         sys.path.insert(0, script_dir)
         from chatbot_multi_mongodb import MultiChatBotMongoDB
         
+        print(f"🔧 Creating bot instance with API key...", file=sys.stderr)
+        
         # Create bot instance for this user
         bot = MultiChatBotMongoDB(api_key=api_key, mongodb_uri=mongodb_uri, db_name=db_name, user_id=user_id)
+        
+        print(f"🔧 Bot instance created, use_gemini={bot.use_gemini}", file=sys.stderr)
         
         # Load model
         if not bot.load_model():
             sys.stdout = old_stdout
+            print("❌ Failed to load model", file=sys.stderr)
             return False
         
         if user_id:

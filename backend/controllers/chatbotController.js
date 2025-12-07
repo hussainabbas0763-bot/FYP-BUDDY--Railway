@@ -56,7 +56,17 @@ function startPythonProcess() {
     }
     
     // Use python3 on Linux/Railway, python on Windows
-    const pythonCmd = process.platform === 'win32' ? 'python' : 'python3';
+    // On Railway, use the virtual environment Python
+    let pythonCmd;
+    if (process.platform === 'win32') {
+        pythonCmd = 'python';
+    } else if (fs.existsSync('/opt/venv/bin/python')) {
+        // Railway virtual environment
+        pythonCmd = '/opt/venv/bin/python';
+        console.log('✅ Using Railway virtual environment Python');
+    } else {
+        pythonCmd = 'python3';
+    }
     
     pythonProcess = spawn(pythonCmd, [scriptPath], {
         env: envVars,

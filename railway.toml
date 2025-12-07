@@ -2,4 +2,4 @@
 builder = "NIXPACKS"
 
 [deploy]
-startCommand = ". /opt/venv/bin/activate && npm run start"
+startCommand = "export LD_LIBRARY_PATH=/nix/store/*-gcc-*-lib/lib:$LD_LIBRARY_PATH && . /opt/venv/bin/activate && npm run start"

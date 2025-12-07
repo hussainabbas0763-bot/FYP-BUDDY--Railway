@@ -1,17 +1,18 @@
 [phases.setup]
-nixPkgs = ["nodejs_22", "python311", "python311Packages.pip"]
+nixPkgs = ["nodejs_22", "python311", "python311Packages.pip", "python311Packages.virtualenv"]
 
 [phases.install]
 cmds = [
   "npm ci",
-  "npm install --prefix frontend --legacy-peer-deps"
+  "npm install --prefix frontend --legacy-peer-deps",
+  "python -m venv /opt/venv"
 ]
 
 [phases.build]
 cmds = [
   "npm run build --prefix frontend",
-  "pip install -r backend/Chatbot/requirements.txt"
+  ". /opt/venv/bin/activate && pip install -r backend/Chatbot/requirements.txt"
 ]
 
 [start]
-cmd = "npm run start"
+cmd = ". /opt/venv/bin/activate && npm run start"

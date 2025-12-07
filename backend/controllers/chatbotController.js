@@ -20,8 +20,10 @@ function startPythonProcess() {
     const scriptPath = path.join(__dirname, '..', 'Chatbot', 'backend', 'chatbot_api.py');
     const chatbotEnvPath = path.join(__dirname, '..', 'Chatbot', '.env');
     
-    // Load environment variables from Chatbot/.env
+    // Start with Railway/system environment variables (includes GEMINI_API_KEY from Railway)
     const envVars = { ...process.env };
+    
+    // Optionally load from Chatbot/.env for local development (won't override Railway vars)
     try {
         if (fs.existsSync(chatbotEnvPath)) {
             const envContent = fs.readFileSync(chatbotEnvPath, 'utf8');
@@ -30,14 +32,27 @@ function startPythonProcess() {
                 if (trimmed && !trimmed.startsWith('#')) {
                     const [key, ...valueParts] = trimmed.split('=');
                     if (key && valueParts.length > 0) {
-                        envVars[key.trim()] = valueParts.join('=').trim();
+                        const envKey = key.trim();
+                        // Only set if not already in environment (Railway vars take precedence)
+                        if (!envVars[envKey]) {
+                            envVars[envKey] = valueParts.join('=').trim();
+                        }
                     }
                 }
             });
             console.log('✅ Loaded environment variables from Chatbot/.env');
+        } else {
+            console.log('ℹ️ No Chatbot/.env file (using Railway environment variables)');
         }
     } catch (error) {
         console.error('⚠️ Could not load Chatbot/.env:', error.message);
+    }
+    
+    // Verify GEMINI_API_KEY is present
+    if (envVars.GEMINI_API_KEY) {
+        console.log('✅ GEMINI_API_KEY found in environment');
+    } else {
+        console.error('❌ GEMINI_API_KEY not found in environment!');
     }
     
     // Use python3 on Linux/Railway, python on Windows

@@ -83,6 +83,19 @@ def initialize_bot(user_id=None, force_reinit=False):
         
         print(f"🔧 Creating bot instance with API key...", file=sys.stderr)
         
+        # Debug: Check Python environment
+        import sys as sys_module
+        print(f"🔧 Python executable: {sys_module.executable}", file=sys.stderr)
+        print(f"🔧 Python version: {sys_module.version}", file=sys.stderr)
+        
+        # Try to import google.generativeai
+        try:
+            import google.generativeai as test_genai
+            print(f"✅ google-generativeai is available!", file=sys.stderr)
+        except ImportError as e:
+            print(f"❌ Cannot import google-generativeai: {e}", file=sys.stderr)
+            print(f"🔧 sys.path: {sys_module.path[:3]}", file=sys.stderr)
+        
         # Create bot instance for this user
         bot = MultiChatBotMongoDB(api_key=api_key, mongodb_uri=mongodb_uri, db_name=db_name, user_id=user_id)
         

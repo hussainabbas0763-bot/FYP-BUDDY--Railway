@@ -40,7 +40,11 @@ function startPythonProcess() {
         console.error('⚠️ Could not load Chatbot/.env:', error.message);
     }
     
-    pythonProcess = spawn('python', [scriptPath], {
+    // Use virtual environment Python if available (Railway deployment)
+    const venvPython = '/opt/venv/bin/python';
+    const pythonCmd = fs.existsSync(venvPython) ? venvPython : 'python';
+    
+    pythonProcess = spawn(pythonCmd, [scriptPath], {
         env: envVars,
         cwd: path.join(__dirname, '..', 'Chatbot')
     });

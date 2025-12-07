@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# MongoDB
+chat_sessions/
+*.pkl
+
+# Node.js (if used)
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# Frontend (dummy/test)
+frontend/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

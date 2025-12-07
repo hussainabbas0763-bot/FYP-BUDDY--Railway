@@ -1,0 +1,14 @@
+# dependencies
+/node_modules
+
+# Environment variables
+.env
+Chatbot/.env
+
+# Python cache
+Chatbot/**/__pycache__
+Chatbot/**/*.pyc
+Chatbot/**/*.pyo
+
+# Chat sessions (file-based storage)
+Chatbot/chat_sessions/

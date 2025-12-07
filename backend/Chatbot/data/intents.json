@@ -1,0 +1,181 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi", "Hey", "Hello", "Good morning", "Good evening",
+        "Is anyone there?", "Yo", "Hi bot", "Hey there",
+        "Assalam o Alaikum", "Assalamu Alaikum", "Salam Alaikum",
+        "Salaam", "Salam", "السلام علیکم", "سلام",
+        "Asalam o Alikum", "Aslam o Alikum", "AOA", "Asslam o Alikum"
+      ],
+      "responses": [
+        "Hello! 😊 How can I help you today?",
+        "Hey! What's on your mind?",
+        "Hi! Looking for a project idea or some guidance?",
+        "Wa Alaikum Assalam! 🌙 How can I assist you?",
+        "وعلیکم السلام! 🌙 How can I help you today?"
+      ]
+    },
+
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye", "Goodbye", "See you later", "Talk to you soon",
+        "Khuda Hafiz", "Allah Hafiz", "خدا حافظ"
+      ],
+      "responses": [
+        "Goodbye! Best of luck with your project! 👋",
+        "See you later! If you need more help, I'm always here.",
+        "Khuda Hafiz! Take care. 🌙",
+        "Allah Hafiz! May your FYP be successful! 🌙"
+      ]
+    },
+
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks", "Thank you", "That's helpful", "Great, thanks!",
+        "Shukriya", "Jazakallah", "JazakAllah Khair", "شکریہ"
+      ],
+      "responses": [
+        "You're welcome! 😊",
+        "Glad I could help.",
+        "Anytime! Let me know if you need more guidance.",
+        "Wa iyyakum! Happy to help! 🌙"
+      ]
+    },
+
+    {
+      "tag": "project_suggestion",
+      "patterns": [
+        "Suggest me a project",
+        "Give me FYP ideas",
+        "I need a project",
+        "I want an IT project",
+        "I want a SE project",
+        "Give me a list of projects",
+        "Recommend a project"
+      ],
+      "responses": [
+        "Sure! Here are some project ideas 😊\n\n1. AI Chatbot\n2. Smart Attendance System\n3. Mobile Fitness Tracker\n4. Web Learning Portal\n5. Sentiment Analysis Tool\n\nIf you want, I can also filter projects by difficulty, department, or tech stack."
+      ]
+    },
+
+    {
+      "tag": "project_details",
+      "patterns": [
+        "Tell me about {name}",
+        "Explain {name}",
+        "What is {name}?",
+        "Give details of {name}",
+        "Describe {name}"
+      ],
+      "responses": [
+        "Here are the details for {name}:",
+        "Sure! Here's what you need to know about {name}:"
+      ]
+    },
+
+    {
+      "tag": "project_requirements",
+      "patterns": [
+        "What are the requirements for {name}?",
+        "What do I need to make {name}?",
+        "Which technologies are used in {name}?",
+        "Tell me tech stack for {name}",
+        "Software and hardware requirements for {name}?",
+        "What tools do I need for {name}?"
+      ],
+      "responses": [
+        "Here are the requirements for {name}:",
+        "To build {name}, you'll need the following:"
+      ]
+    },
+
+    {
+      "tag": "technology_explanation",
+      "patterns": [
+        "What is {tech}?",
+        "Explain {tech}",
+        "Tell me about {tech}",
+        "{tech} meaning?",
+        "{tech} kya hota hai?"
+      ],
+      "responses": [
+        "{tech} is used in many modern systems. Here's a simple explanation:",
+        "Sure! Here is what {tech} means:"
+      ]
+    },
+
+    {
+      "tag": "project_technologies",
+      "patterns": [
+        "What technologies should I use?",
+        "Tell me tools for AI chatbot",
+        "Which framework for fitness app?",
+        "Best tech stack for my project",
+        "Which programming languages should I use?"
+      ],
+      "responses": [
+        "Here's a recommended tech stack:\n\n• AI Chatbot → Python, TensorFlow, NLTK, Flask\n• Fitness App → Flutter, Firebase\n• Web Portal → React.js, Node.js, MongoDB\n\nI can give more suggestions if you tell me your project idea 😊"
+      ]
+    },
+
+    {
+      "tag": "project_acceptability",
+      "patterns": [
+        "Is {name} allowed at NUML?",
+        "Will NUML accept {name}?",
+        "Can I submit {name}?",
+        "Is {name} an acceptable FYP?"
+      ],
+      "responses": [
+        "Let me check NUML acceptance rules for {name}:",
+        "Here is the NUML acceptability status for {name}:"
+      ]
+    },
+
+    {
+      "tag": "project_rejection",
+      "patterns": [
+        "Can I make a ChatGPT clone?",
+        "Can I build a Facebook clone?",
+        "I want to create TikTok",
+        "I want to make YouTube-like app",
+        "I want to build Instagram clone"
+      ],
+      "responses": [
+        "That project usually isn't accepted at NUML because it's very large and lacks originality. Instead, try making a **smaller version with a unique purpose**, like:\n\n• Chatbot for NUML students\n• Mini video-sharing platform for study groups\n• Simple social platform for classroom communication\n\nThis keeps your project original and manageable 😊"
+      ]
+    },
+
+    {
+      "tag": "chitchat",
+      "patterns": [
+        "How are you?",
+        "What's up?",
+        "How is your day?",
+        "What can you do?",
+        "Kya haal hai?",
+        "Kaisay ho?"
+      ],
+      "responses": [
+        "I'm doing great! Ready to help you with any project or tech question 😊",
+        "All good here! What project are you working on?",
+        "I can suggest projects, explain technologies, and guide you like a human mentor.",
+        "Alhamdulillah, I'm good! How can I help you with your FYP? 🌙"
+      ]
+    },
+
+    {
+      "tag": "fallback",
+      "patterns": ["???", "I don't understand", "What?", "Say again"],
+      "responses": [
+        "Hmm, I didn't get that 😅 Could you rephrase it?",
+        "I'm not sure I understood. Want to try asking in another way?",
+        "Can you please clarify that?"
+      ]
+    }
+  ]
+}

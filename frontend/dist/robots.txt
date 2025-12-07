@@ -1,0 +1,17 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /student/
+Disallow: /supervisor/
+Disallow: /coordinator/
+
+# Public pages
+Allow: /
+Allow: /about-us
+Allow: /contact-us
+Allow: /privacy-policy
+Allow: /terms-and-conditions
+
+# Sitemap
+Sitemap: https://yourdomain.com/sitemap.xml

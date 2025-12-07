@@ -1,0 +1,6 @@
+# AI Model
+google-generativeai>=0.3.0
+
+# MongoDB Atlas (Cloud Database)
+pymongo>=4.0.0
+dnspython>=2.0.0

@@ -1,0 +1,884 @@
+
+{
+  "description": [
+    {
+      "id": 1,
+      "name": "Python",
+      "category": "Language",
+      "type": "programming",
+      "short_description": "A high-level programming language used for web dev, data analysis, and AI.",
+      "long_description": "Python is a powerful, readable, and widely-used language with a large ecosystem of libraries for web development, data science, machine learning, automation, and scripting. It is beginner-friendly and versatile.",
+      "tags": ["programming","language","python","ai","data"],
+      "more_info_link": "https://www.python.org/",
+      "examples": ["Web apps: Flask/Django", "Data analysis: Pandas", "Machine learning: TensorFlow, PyTorch"],
+      "difficulty": "easy"
+    },
+    {
+      "id": 2,
+      "name": "Flask",
+      "category": "Web Framework",
+      "type": "framework",
+      "short_description": "A lightweight Python web framework for building APIs and web apps.",
+      "long_description": "Flask is a minimal and flexible Python web framework that makes building small to medium web services and REST APIs straightforward with minimal boilerplate. Good for prototyping and lightweight apps.",
+      "tags": ["python","web","api","framework"],
+      "more_info_link": "https://flask.palletsprojects.com/",
+      "examples": ["REST API: User authentication endpoints", "Web apps: Simple dashboards"],
+      "difficulty": "easy"
+    },
+    {
+      "id": 3,
+      "name": "Django",
+      "category": "Web Framework",
+      "type": "framework",
+      "short_description": "A high-level Python framework for rapid, secure web development.",
+      "long_description": "Django follows convention over configuration with built-in admin, ORM, and security features—great for database-driven websites and web apps requiring robust structure.",
+      "tags": ["python","web","framework","backend"],
+      "more_info_link": "https://www.djangoproject.com/",
+      "examples": ["CMS: Admin dashboards", "Web apps: E-commerce platforms"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 4,
+      "name": "FastAPI",
+      "category": "Web Framework",
+      "type": "framework",
+      "short_description": "A high-performance Python framework for building APIs using type hints.",
+      "long_description": "FastAPI provides automatic docs (OpenAPI), async support, and type-driven validation—excellent for performant and well-documented APIs.",
+      "tags": ["python","api","framework","async"],
+      "more_info_link": "https://fastapi.tiangolo.com/",
+      "examples": ["Production-ready async REST APIs for ML inference"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 5,
+      "name": "TensorFlow",
+      "category": "Machine Learning",
+      "type": "library",
+      "short_description": "An open-source ML framework for building and training neural networks.",
+      "long_description": "TensorFlow is a comprehensive library developed by Google for building and training machine learning and deep learning models at scale, with tools for deployment.",
+      "tags": ["ml","deep-learning","tensorflow","python"],
+      "more_info_link": "https://www.tensorflow.org/",
+      "examples": ["Training CNNs and RNNs", "Serving models with TensorFlow Serving"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 6,
+      "name": "Keras",
+      "category": "Machine Learning",
+      "type": "library",
+      "short_description": "A high-level API running on top of TensorFlow to simplify model building.",
+      "long_description": "Keras provides a user-friendly, modular interface to quickly build and experiment with neural network architectures, integrated with TensorFlow.",
+      "tags": ["ml","deep-learning","keras","python"],
+      "more_info_link": "https://keras.io/",
+      "examples": ["Prototyping neural networks using Sequential/Functional API"],
+      "difficulty": "easy"
+    },
+    {
+      "id": 7,
+      "name": "PyTorch",
+      "category": "Machine Learning",
+      "type": "library",
+      "short_description": "A flexible open-source deep learning framework favored by researchers.",
+      "long_description": "PyTorch offers dynamic computation graphs and flexible APIs, making it popular for research and prototyping deep learning models and custom layers.",
+      "tags": ["ml","deep-learning","pytorch","python","research"],
+      "more_info_link": "https://pytorch.org/",
+      "examples": ["Custom model training", "Transfer learning pipelines"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 8,
+      "name": "Scikit-learn",
+      "category": "Machine Learning",
+      "type": "library",
+      "short_description": "A Python library offering simple, efficient tools for classical ML algorithms.",
+      "long_description": "Scikit-learn supplies well-tested implementations of classification, regression, clustering, and preprocessing algorithms suitable for medium-scale ML tasks.",
+      "tags": ["ml","classical-ml","python"],
+      "more_info_link": "https://scikit-learn.org/",
+      "examples": ["Logistic regression", "SVM classification", "Feature engineering pipelines"],
+      "difficulty": "easy"
+    },
+    {
+      "id": 9,
+      "name": "Hugging Face Transformers",
+      "category": "NLP",
+      "type": "library",
+      "short_description": "A library with pre-trained transformer models for NLP tasks.",
+      "long_description": "The Hugging Face Transformers library exposes pretrained models (BERT, GPT, etc.) and tools for fine-tuning and inference in NLP workflows.",
+      "tags": ["nlp","transformers","huggingface","python"],
+      "more_info_link": "https://huggingface.co/transformers/",
+      "examples": ["Text classification", "Text generation", "Named-entity recognition"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 10,
+      "name": "BERT",
+      "category": "NLP",
+      "type": "model",
+      "short_description": "A transformer-based model for understanding language context.",
+      "long_description": "BERT (Bidirectional Encoder Representations from Transformers) is a pretrained model that captures contextual word meaning and is used for many NLP tasks.",
+      "tags": ["nlp","transformer","bert","python"],
+      "more_info_link": "https://github.com/google-research/bert",
+      "examples": ["Text classification", "Question answering", "Named-entity recognition"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 11,
+      "name": "NLTK",
+      "category": "NLP",
+      "type": "library",
+      "short_description": "A Python toolkit for natural language processing and text analysis.",
+      "long_description": "NLTK provides tokenizers, corpora, and utilities for text processing tasks such as tokenization, POS tagging, and simple classifiers; ideal for learning and prototyping.",
+      "tags": ["nlp","text","python","toolkit"],
+      "more_info_link": "https://www.nltk.org/",
+      "examples": ["Tokenization", "Stopword removal", "Basic sentiment analysis"],
+      "difficulty": "easy"
+    },
+    {
+      "id": 12,
+      "name": "OpenCV",
+      "category": "Computer Vision",
+      "type": "library",
+      "short_description": "An open-source library for image processing and computer vision.",
+      "long_description": "OpenCV offers image and video processing algorithms (filters, detection, tracking, transformations) widely used in CV projects like face recognition or object detection.",
+      "tags": ["cv","computer-vision","opencv","python"],
+      "more_info_link": "https://opencv.org/",
+      "examples": ["Face detection", "Image preprocessing for ML models"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 13,
+      "name": "YOLOv5",
+      "category": "Computer Vision",
+      "type": "model",
+      "short_description": "A fast real-time object detection model family (YOLO).",
+      "long_description": "YOLOv5 is an efficient object-detection model optimized for speed and accuracy on images and video streams, common in real-time detection systems.",
+      "tags": ["cv","object-detection","yolo","python"],
+      "more_info_link": "https://github.com/ultralytics/yolov5",
+      "examples": ["Detecting cars, people, and traffic signs in video streams"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 14,
+      "name": "MediaPipe",
+      "category": "Computer Vision",
+      "type": "library",
+      "short_description": "A framework for building real-time multimodal ML pipelines (pose, face, hands).",
+      "long_description": "MediaPipe provides prebuilt solutions and performant pipelines for tasks like pose estimation, hand tracking, and face detection for real-time apps.",
+      "tags": ["cv","pose","hand-tracking","realtime"],
+      "more_info_link": "https://developers.google.com/mediapipe",
+      "examples": ["Pose estimation for fitness apps", "Hand tracking in AR/VR"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 15,
+      "name": "BeautifulSoup",
+      "category": "Web Scraping",
+      "type": "library",
+      "short_description": "A Python library to parse HTML and extract data.",
+      "long_description": "BeautifulSoup makes it easy to extract data from HTML/XML documents for web scraping and preprocessing datasets for analysis.",
+      "tags": ["scraping","html","python","web"],
+      "more_info_link": "https://www.crummy.com/software/BeautifulSoup/",
+      "examples": ["Scraping product info from e-commerce sites", "Extracting article text from web pages"],
+      "difficulty": "easy"
+    },
+    {
+      "id": 16,
+      "name": "React",
+      "category": "Frontend",
+      "type": "library",
+      "short_description": "A JavaScript library for building UI using reusable components.",
+      "long_description": "React helps build interactive, component-based frontends with unidirectional data flow and hooks for state management; commonly paired with Node/Express backends.",
+      "tags": ["frontend","javascript","ui","react"],
+      "more_info_link": "https://react.dev/",
+      "examples": ["Single-page apps", "React Router for navigation", "Component libraries"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 17,
+      "name": "Node.js",
+      "category": "Runtime",
+      "type": "runtime",
+      "short_description": "A JavaScript runtime for server-side programming using V8 engine.",
+      "long_description": "Node.js enables writing backend services in JavaScript, with an event-driven model suitable for I/O-bound apps and microservices.",
+      "tags": ["backend","javascript","runtime","nodejs"],
+      "more_info_link": "https://nodejs.org/",
+      "examples": ["REST APIs with Express", "Realtime apps with Socket.io"],
+      "difficulty": "medium"
+    },
+
+ {
+    "id": 18,
+    "name": "JavaScript",
+    "category": "Language",
+    "type": "programming",
+    "short_description": "A scripting language enabling interactivity in web pages and servers.",
+    "long_description": "JavaScript runs in browsers and on servers (Node.js), enabling dynamic UI behavior, DOM manipulation, and asynchronous programming with promises/async.",
+    "tags": [
+      "language",
+      "frontend",
+      "backend",
+      "javascript"
+    ],
+    "more_info_link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    "examples": [
+      "DOM manipulation",
+      "Client-side validation",
+      "Async API calls"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": 19,
+    "name": "PHP",
+    "category": "Backend",
+    "type": "programming",
+    "short_description": "A server-side scripting language commonly used for web development.",
+    "long_description": "PHP is widely used for server-rendered web apps and content-management systems (e.g., WordPress); it integrates easily with relational databases.",
+    "tags": [
+      "backend",
+      "web",
+      "php"
+    ],
+    "more_info_link": "https://www.php.net/",
+    "examples": [
+      "Server-side templates",
+      "Form handling",
+      "Session management"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": 20,
+    "name": "MySQL",
+    "category": "Database",
+    "type": "sql",
+    "short_description": "A popular open-source relational database for structured data.",
+    "long_description": "MySQL stores and queries structured data using SQL; used widely for web applications requiring ACID transactions and relational schemas.",
+    "tags": [
+      "database",
+      "sql",
+      "relational",
+      "mysql"
+    ],
+    "more_info_link": "https://www.mysql.com/",
+    "examples": [
+      "User accounts table",
+      "Joins",
+      "Transactions"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": 21,
+    "name": "SQLite",
+    "category": "Database",
+    "type": "sql",
+    "short_description": "A lightweight, file-based SQL database for small apps and mobile.",
+    "long_description": "SQLite is an embedded SQL database engine stored in a single file, ideal for prototyping, local apps, and mobile where a full DB server is unnecessary.",
+    "tags": [
+      "database",
+      "embedded",
+      "sql",
+      "sqlite"
+    ],
+    "more_info_link": "https://www.sqlite.org/",
+    "examples": [
+      "Local app storage",
+      "Small desktop utilities"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": 22,
+    "name": "Firebase",
+    "category": "Backend Platform",
+    "type": "cloud",
+    "short_description": "Google's platform for realtime DB, auth, storage, and hosting.",
+    "long_description": "Firebase offers real-time databases, authentication, cloud functions, and storage for rapid mobile and web app development without managing servers.",
+    "tags": [
+      "backend",
+      "realtime",
+      "cloud",
+      "firebase"
+    ],
+    "more_info_link": "https://firebase.google.com/",
+    "examples": [
+      "Realtime chat apps",
+      "Authentication with Firebase Auth"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": 23,
+    "name": "MongoDB",
+    "category": "Database",
+    "type": "nosql",
+    "short_description": "A document-oriented NoSQL database using JSON-like storage.",
+    "long_description": "MongoDB stores flexible JSON-like documents, suitable for schemaless or evolving data models and horizontal scaling with sharding.",
+    "tags": [
+      "nosql",
+      "document-db",
+      "database",
+      "mongodb"
+    ],
+    "more_info_link": "https://www.mongodb.com/",
+    "examples": [
+      "Storing user profiles",
+      "Product catalogs with varying fields"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": 24,
+    "name": "Arduino",
+    "category": "Hardware",
+    "type": "microcontroller",
+    "short_description": "An open-source electronics platform for building hardware prototypes.",
+    "long_description": "Arduino microcontroller boards allow developers to read sensors and control actuators, ideal for simple embedded and IoT projects.",
+    "tags": [
+      "hardware",
+      "iot",
+      "microcontroller",
+      "arduino"
+    ],
+    "more_info_link": "https://www.arduino.cc/",
+    "examples": [
+      "Controlling LEDs",
+      "Motor control",
+      "IoT prototypes"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": 25,
+    "name": "Raspberry Pi",
+    "category": "Hardware",
+    "type": "single-board-computer",
+    "short_description": "A low-cost single-board computer used for programming and IoT.",
+    "long_description": "Raspberry Pi provides a full Linux environment on tiny hardware, good for edge computing, IoT gateways, and small servers.",
+    "tags": [
+      "hardware",
+      "iot",
+      "edge",
+      "raspberry-pi"
+    ],
+    "more_info_link": "https://www.raspberrypi.org/",
+    "examples": [
+      "Home automation hubs",
+      "Small deployment servers"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": 26,
+    "name": "ESP8266",
+    "category": "Hardware",
+    "type": "microcontroller",
+    "short_description": "A low-cost Wi-Fi microcontroller for IoT devices.",
+    "long_description": "ESP8266 modules allow Wi-Fi connectivity on embedded devices and are commonly used to build low-power IoT sensors and actuators.",
+    "tags": [
+      "hardware",
+      "iot",
+      "wifi",
+      "esp8266"
+    ],
+    "more_info_link": "https://randomnerdtutorials.com/esp8266-overview/",
+    "examples": [
+      "Sending sensor data to server over Wi-Fi"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": 27,
+    "name": "Blynk",
+    "category": "IoT Platform",
+    "type": "platform",
+    "short_description": "A mobile/IOT platform to build interfaces for hardware control.",
+    "long_description": "Blynk simplifies building mobile dashboards to control and monitor microcontrollers remotely without building a custom backend.",
+    "tags": [
+      "iot",
+      "platform",
+      "mobile",
+      "blynk"
+    ],
+    "more_info_link": "https://blynk.io/",
+    "examples": [
+      "Mobile controls for home automation using Blynk app"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": 28,
+    "name": "C++",
+    "category": "Language",
+    "type": "programming",
+    "short_description": "A high-performance programming language for system-level programming.",
+    "long_description": "C++ offers low-level memory control and high performance, commonly used in system software, real-time systems, and performance-critical applications.",
+    "tags": [
+      "language",
+      "systems",
+      "performance",
+      "c++"
+    ],
+    "more_info_link": "https://isocpp.org/",
+    "examples": [
+      "Performance-critical modules",
+      "Embedded systems"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": 29,
+    "name": "C#",
+    "category": "Language",
+    "type": "programming",
+    "short_description": "An object-oriented language from Microsoft for Windows and web apps.",
+    "long_description": "C# is used to build desktop, web, and game applications (via .NET and Unity), with strong typing and modern language features.",
+    "tags": [
+      "language",
+      "dotnet",
+      "windows",
+      "c#"
+    ],
+    "more_info_link": "https://learn.microsoft.com/en-us/dotnet/csharp/",
+    "examples": [
+      "ASP.NET web apps",
+      "Unity game scripts"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": 30,
+    "name": "Java",
+    "category": "Language",
+    "type": "programming",
+    "short_description": "A popular object-oriented language for enterprise and Android.",
+    "long_description": "Java runs on the JVM and is widely used for large-scale backend systems and Android mobile application development.",
+    "tags": [
+      "language",
+      "enterprise",
+      "android",
+      "java"
+    ],
+    "more_info_link": "https://www.java.com/",
+    "examples": [
+      "Spring Boot APIs",
+      "Android apps"
+    ],
+    "difficulty": "medium"
+  },
+    {
+      "id": 31,
+      "name": "Django",
+      "category": "Web Framework",
+      "short_description": "A high-level Python framework for rapid, secure web development.",
+      "long_description": "Django follows convention over configuration with built-in admin, ORM, and security features—great for database-driven websites and web apps.",
+      "tags": ["python","web","framework"],
+      "more_info_link": "https://www.djangoproject.com/",
+      "examples": ["Content management systems, admin dashboards."]
+    },
+    {
+      "id": 32,
+      "name": "YOLOv5",
+      "category": "Computer Vision",
+      "short_description": "A fast real-time object detection model family.",
+      "long_description": "YOLOv5 is an efficient object-detection model optimized for speed and accuracy on images and video streams, common in real-time detection systems.",
+      "tags": ["cv","detection","yolo"],
+      "more_info_link": "https://github.com/ultralytics/yolov5",
+      "examples": ["Detecting cars, people, and traffic signs in video."]
+    },
+    {
+      "id": 33,
+      "name": "BERT",
+      "category": "NLP Model",
+      "short_description": "A transformer-based model for understanding language context.",
+      "long_description": "BERT (Bidirectional Encoder Representations from Transformers) is a pretrained model that captures contextual word meaning and is used for many NLP tasks.",
+      "tags": ["nlp","transformer","bert"],
+      "more_info_link": "https://github.com/google-research/bert",
+      "examples": ["Text classification, QA, named-entity recognition."]
+    },
+    {
+      "id": 34,
+      "name": "BeautifulSoup",
+      "category": "Web Scraping",
+      "short_description": "A Python library to parse HTML and extract data.",
+      "long_description": "BeautifulSoup makes it easy to extract data from HTML/XML documents for web scraping and preprocessing datasets for analysis.",
+      "tags": ["scraping","html","python"],
+      "more_info_link": "https://www.crummy.com/software/BeautifulSoup/",
+      "examples": ["Scraping product info or article text from web pages."]
+    },
+    {
+      "id": 35,
+      "name": "Streamlit",
+      "category": "Web Framework",
+      "short_description": "A Python framework to quickly create interactive ML web apps.",
+      "long_description": "Streamlit lets you build data apps and demos with minimal code—great for sharing models and dashboards during development.",
+      "tags": ["python","dashboard","ml"],
+      "more_info_link": "https://streamlit.io/",
+      "examples": ["Model demo pages, simple dashboards for prototypes."]
+    },
+    {
+      "id": 36,
+      "name": "FastAPI",
+      "category": "Web Framework",
+      "short_description": "A high-performance Python framework for building APIs using type hints.",
+      "long_description": "FastAPI provides automatic docs (OpenAPI), async support, and type-driven validation—excellent for performant and well-documented APIs.",
+      "tags": ["python","api","performance"],
+      "more_info_link": "https://fastapi.tiangolo.com/",
+      "examples": ["Production-ready async REST APIs for ML inference."]
+    },
+    {
+      "id": 37,
+      "name": "Bootstrap",
+      "category": "Frontend",
+      "short_description": "A front-end framework for responsive websites with prebuilt components.",
+      "long_description": "Bootstrap accelerates UI development with style utilities, grid systems, and reusable components to build responsive layouts quickly.",
+      "tags": ["frontend","css","ui"],
+      "more_info_link": "https://getbootstrap.com/",
+      "examples": ["Responsive navbars, form styling, grid layout."]
+    },
+    {
+      "id": 38,
+      "name": "Power BI",
+      "category": "Business Intelligence",
+      "short_description": "Microsoft's tool for interactive data visualization and dashboards.",
+      "long_description": "Power BI allows non-technical users to create interactive reports, dashboards, and visualizations connected to many data sources.",
+      "tags": ["bi","visualization","dashboard"],
+      "more_info_link": "https://powerbi.microsoft.com/",
+      "examples": ["Business dashboards, KPI trackers."]
+    },
+    {
+      "id": 39,
+      "name": "Tableau",
+      "category": "Business Intelligence",
+      "short_description": "A data visualization tool for interactive charts and dashboards.",
+      "long_description": "Tableau helps analysts transform raw data into visually compelling and interactive reports for exploration and storytelling.",
+      "tags": ["visualization","bi"],
+      "more_info_link": "https://www.tableau.com/",
+      "examples": ["Exploratory dashboards, visual analytics."]
+    },
+    {
+      "id": 40,
+      "name": "MATLAB",
+      "category": "Scientific Computing",
+      "short_description": "A numeric computing environment for modeling and simulations.",
+      "long_description": "MATLAB provides toolboxes for signal processing, control systems, and numerical computation commonly used in engineering and research.",
+      "tags": ["math","simulation","engineering"],
+      "more_info_link": "https://www.mathworks.com/products/matlab.html",
+      "examples": ["Signal processing, matrix computations, prototyping algorithms."]
+    },
+    {
+      "id": 41,
+      "name": "Solidity",
+      "category": "Blockchain",
+      "short_description": "A programming language for writing smart contracts on Ethereum.",
+      "long_description": "Solidity is a statically typed language for authoring smart contracts that run on EVM-compatible blockchains like Ethereum.",
+      "tags": ["blockchain","smart-contracts"],
+      "more_info_link": "https://soliditylang.org/",
+      "examples": ["Writing token contracts and decentralized voting logic."]
+    },
+    {
+      "id": 42,
+      "name": "Ethereum",
+      "category": "Blockchain",
+      "short_description": "A decentralized blockchain platform to build DApps and smart contracts.",
+      "long_description": "Ethereum enables deploying decentralized applications and immutable smart contracts with a global consensus network and token standards.",
+      "tags": ["blockchain","dapp","ethereum"],
+      "more_info_link": "https://ethereum.org/",
+      "examples": ["Deploying smart contracts and interacting via Web3."]
+    },
+    {
+      "id": 43,
+      "name": "Web3.js",
+      "category": "Blockchain",
+      "short_description": "A JavaScript library to interact with Ethereum nodes and smart contracts.",
+      "long_description": "Web3.js provides APIs to read blockchain state, send transactions, and call smart contract methods from a JavaScript environment.",
+      "tags": ["web3","javascript","blockchain"],
+      "more_info_link": "https://web3js.readthedocs.io/",
+      "examples": ["Calling a contract function from a web app."]
+    },
+    {
+      "id": 44,
+      "name": "MetaMask",
+      "category": "Blockchain",
+      "short_description": "A browser wallet for managing Ethereum accounts and dApp interactions.",
+      "long_description": "MetaMask is a browser extension and mobile wallet that manages private keys and interacts with Ethereum dApps through injected web3 providers.",
+      "tags": ["wallet","blockchain","browser"],
+      "more_info_link": "https://metamask.io/",
+      "examples": ["Connecting a web app to MetaMask for transactions."]
+    },
+    {
+      "id": 45,
+      "name": "SMTP",
+      "category": "Protocol",
+      "short_description": "The protocol used for sending emails across the Internet.",
+      "long_description": "SMTP (Simple Mail Transfer Protocol) defines how email messages are routed and delivered from client to server and between servers.",
+      "tags": ["email","protocol"],
+      "more_info_link": "https://www.cloudflare.com/learning/email-security/what-is-smtp/",
+      "examples": ["Sending verification emails from backend servers."]
+    },
+    {
+      "id": 46,
+      "name": "SpeechRecognition",
+      "category": "Speech",
+      "short_description": "A Python library enabling speech-to-text conversions.",
+      "long_description": "SpeechRecognition provides interfaces to several speech APIs and engines to convert spoken audio into text for voice-enabled applications.",
+      "tags": ["speech","stt","python"],
+      "more_info_link": "https://pypi.org/project/SpeechRecognition/",
+      "examples": ["Turning microphone input into text for a voice assistant."]
+    },
+    {
+      "id": 47,
+      "name": "Dlib",
+      "category": "Computer Vision",
+      "short_description": "A toolkit with ML algorithms used for face detection and recognition.",
+      "long_description": "Dlib contains implementations of popular ML algorithms and tools for facial landmark detection, object detection, and model training.",
+      "tags": ["vision","face","ml"],
+      "more_info_link": "http://dlib.net/",
+      "examples": ["Face landmark detection and alignment."]
+    },
+    {
+      "id": 48,
+      "name": "MediaPipe",
+      "category": "Computer Vision",
+      "short_description": "A framework for building real-time multimodal ML pipelines (pose, face, hands).",
+      "long_description": "MediaPipe provides prebuilt solutions and performant pipelines for tasks like pose estimation, hand tracking, and face detection for real-time apps.",
+      "tags": ["cv","pose","realtime"],
+      "more_info_link": "https://developers.google.com/mediapipe",
+      "examples": ["Pose estimation for fitness apps using MediaPipe."]
+    },
+    {
+      "id": 49,
+      "name": "Servo Motor",
+      "category": "Hardware",
+      "short_description": "A motor enabling precise angular control for robotics and IoT.",
+      "long_description": "Servo motors allow precise control of angular position using PWM signals and are commonly used in robotics and automation.",
+      "tags": ["hardware","motor","robotics"],
+      "more_info_link": "https://learn.sparkfun.com/tutorials/servo-motors/all",
+      "examples": ["Used to control the angle of robotic arms or locks."]
+    },
+    {
+      "id": 50,
+      "name": "Sensor",
+      "category": "Hardware",
+      "short_description": "A device that detects physical changes and converts them into electrical signals.",
+      "long_description": "Sensors detect environmental changes (motion, temperature, humidity) and are key components in IoT systems to collect data from the physical world.",
+      "tags": ["hardware","iot","sensing"],
+      "more_info_link": "https://www.electronics-tutorials.ws/sensors/basic-sensors.html",
+      "examples": ["DHT11 for temperature/humidity, ultrasonic for distance."]
+    },
+    {
+      "id": 51,
+      "name": "RNN",
+      "category": "Machine Learning",
+      "short_description": "Recurrent Neural Network — model for sequential data.",
+      "long_description": "RNNs are neural architectures designed to handle sequences by keeping hidden states over time, commonly used for text, speech, and time-series tasks.",
+      "tags": ["ml","sequence","rnn"],
+      "more_info_link": "https://developers.google.com/machine-learning/glossary#RNN",
+      "examples": ["Language modeling, time-series prediction."]
+    },
+    {
+      "id": 52,
+      "name": "CNN",
+      "category": "Machine Learning",
+      "short_description": "Convolutional Neural Network — ideal for images and vision tasks.",
+      "long_description": "CNNs use convolutional layers to automatically extract spatial features helpful in image classification, object detection, and segmentation.",
+      "tags": ["ml","cnn","vision"],
+      "more_info_link": "https://developers.google.com/machine-learning/glossary#CNN",
+      "examples": ["Image classification and feature extraction."]
+    },
+    {
+      "id": 53,
+      "name": "API",
+      "category": "Concept",
+      "short_description": "An interface that allows software components to communicate.",
+      "long_description": "APIs define the rules and data formats for interaction between software systems, e.g., RESTful APIs that use HTTP for client-server communication.",
+      "tags": ["concept","integration","api"],
+      "more_info_link": "https://www.mulesoft.com/resources/api/what-is-an-api",
+      "examples": ["REST endpoints, third-party service integrations."]
+    },
+    {
+      "id": 54,
+      "name": "GitHub",
+      "category": "Tool",
+      "short_description": "A platform for hosting code and collaborating with version control.",
+      "long_description": "GitHub hosts Git repositories, offers pull requests, issues, and CI/CD integrations to manage code and collaboration workflows.",
+      "tags": ["vcs","collaboration","git"],
+      "more_info_link": "https://github.com/",
+      "examples": ["Push code, create PRs, use Actions for CI."]
+    },
+    {
+      "id": 55,
+      "name": "REST API",
+      "category": "Concept",
+      "short_description": "A style of web API using HTTP methods and stateless communication.",
+      "long_description": "REST uses HTTP verbs (GET, POST, PUT, DELETE), resources, and status codes to create interoperable web services.",
+      "tags": ["api","rest","http"],
+      "more_info_link": "https://restfulapi.net/",
+      "examples": ["CRUD endpoints for a resource-driven service."]
+    },
+    {
+      "id": 56,
+      "name": "Hugging Face Transformers",
+      "category": "NLP",
+      "short_description": "A library with pre-trained transformer models for NLP tasks.",
+      "long_description": "The Hugging Face Transformers library exposes pretrained models (BERT, GPT, etc.) and tools for fine-tuning and inference in NLP workflows.",
+      "tags": ["nlp","transformers","huggingface"],
+      "more_info_link": "https://huggingface.co/transformers/",
+      "examples": ["Text classification, text generation, sequence labeling."]
+    },
+    {
+      "id": 57,
+      "name": "Postman",
+      "category": "Tool",
+      "short_description": "A platform to test and automate APIs and collaborate on API design.",
+      "long_description": "Postman offers a UI for sending HTTP requests, testing endpoints, documenting APIs, and running automated test collections.",
+      "tags": ["api","testing","tool"],
+      "more_info_link": "https://www.postman.com/",
+      "examples": ["Testing endpoints, generating collection documentation."]
+    },
+    {
+      "id": 58,
+      "name": "Docker",
+      "category": "DevOps",
+      "short_description": "A container platform that packages apps with their dependencies.",
+      "long_description": "Docker containers ensure consistent execution environments by packaging application code and runtime dependencies into lightweight, reproducible containers.",
+      "tags": ["containers","devops","deployment"],
+      "more_info_link": "https://www.docker.com/",
+      "examples": ["Containerizing a Flask app for deployment."]
+    },
+    {
+      "id": 59,
+      "name": "Linux",
+      "category": "Operating System",
+      "short_description": "An open-source OS widely used for servers and development.",
+      "long_description": "Linux distributions power servers, development environments, and embedded devices; common tools include the Bash shell, package managers, and systemd.",
+      "tags": ["os","server","unix"],
+      "more_info_link": "https://www.linux.org/",
+      "examples": ["Running servers, development on Ubuntu or Debian."]
+    },
+        {
+      "id": 60,
+      "name": "FastAPI",
+      "category": "Web Framework",
+      "type": "framework",
+      "short_description": "A high-performance Python framework for building APIs using type hints.",
+      "long_description": "FastAPI provides automatic docs (OpenAPI), async support, and type-driven validation—excellent for performant and well-documented APIs.",
+      "tags": ["python","api","framework","async"],
+      "more_info_link": "https://fastapi.tiangolo.com/",
+      "examples": ["Production-ready async REST APIs for ML inference"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 61,
+      "name": "Transformers",
+      "category": "Machine Learning",
+      "type": "library",
+      "short_description": "State-of-the-art natural language processing library by Hugging Face.",
+      "long_description": "Provides thousands of pre-trained models for NLP tasks like text classification, generation, translation, and question answering. Based on transformer architecture.",
+      "tags": ["python", "nlp", "deep-learning", "huggingface", "transformer"],
+      "more_info_link": "https://huggingface.co/docs/transformers/",
+      "examples": ["BERT for text classification", "GPT for text generation", "T5 for translation"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 62,
+      "name": "WebSockets",
+      "category": "Networking",
+      "type": "protocol",
+      "short_description": "Full-duplex communication protocol for real-time web applications.",
+      "long_description": "Enables persistent, low-latency connections between client and server for real-time data exchange, ideal for chat apps, live notifications, and gaming.",
+      "tags": ["real-time", "communication", "protocol", "web"],
+      "more_info_link": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
+      "examples": ["Live chat applications", "Real-time dashboards", "Multiplayer games"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 63,
+      "name": "LoRa",
+      "category": "IoT",
+      "type": "communication",
+      "short_description": "Long Range, low-power wireless communication technology for IoT devices.",
+      "long_description": "LoRa enables long-distance communication (up to 15 km) with minimal power consumption, making it ideal for battery-operated IoT sensors in smart cities and agriculture.",
+      "tags": ["iot", "wireless", "long-range", "low-power"],
+      "more_info_link": "https://lora-alliance.org/",
+      "examples": ["Smart agriculture sensors", "City-wide pollution monitoring", "Asset tracking systems"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 64,
+      "name": "WebGL/Three.js",
+      "category": "Graphics",
+      "type": "library",
+      "short_description": "JavaScript libraries for 3D graphics and animations in web browsers.",
+      "long_description": "WebGL provides low-level access to GPU for 3D rendering, while Three.js is a high-level library that simplifies creating 3D scenes, models, and animations directly in the browser.",
+      "tags": ["3d", "graphics", "javascript", "web", "visualization"],
+      "more_info_link": "https://threejs.org/",
+      "examples": ["3D product visualizers", "Interactive data visualizations", "Browser-based games"],
+      "difficulty": "high"
+    },
+    {
+      "id": 65,
+      "name": "Biofeedback Sensors",
+      "category": "Healthcare",
+      "type": "hardware",
+      "short_description": "Sensors that measure physiological signals like heart rate, skin conductance, and brain waves.",
+      "long_description": "These sensors capture biological data for health monitoring, stress management, and human-computer interaction applications, enabling real-time physiological feedback systems.",
+      "tags": ["healthcare", "sensors", "biometrics", "wearable"],
+      "more_info_link": "https://en.wikipedia.org/wiki/Biofeedback",
+      "examples": ["Stress monitoring devices", "Meditation assistance apps", "Emotion detection systems"],
+      "difficulty": "high"
+    },
+    {
+      "id": 66,
+      "name": "ML-Agents",
+      "category": "Game Development",
+      "type": "toolkit",
+      "short_description": "Unity's machine learning toolkit for creating intelligent game characters.",
+      "long_description": "Allows training intelligent NPCs using reinforcement learning, imitation learning, and other ML techniques within the Unity game engine.",
+      "tags": ["unity", "machine-learning", "gaming", "ai", "reinforcement-learning"],
+      "more_info_link": "https://unity.com/products/machine-learning-agents",
+      "examples": ["Adaptive game enemies", "Intelligent NPC behavior", "Game testing automation"],
+      "difficulty": "high"
+    },
+    {
+      "id": 67,
+      "name": "WebRTC",
+      "category": "Communication",
+      "type": "protocol",
+      "short_description": "Web Real-Time Communication for peer-to-peer audio, video, and data transfer.",
+      "long_description": "Enables direct browser-to-browser communication without plugins, supporting video conferencing, file sharing, and screen sharing applications.",
+      "tags": ["real-time", "video", "audio", "p2p", "communication"],
+      "more_info_link": "https://webrtc.org/",
+      "examples": ["Video conferencing apps", "Peer-to-peer file sharing", "Live streaming platforms"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 68,
+      "name": "ESP32/ESP8266",
+      "category": "IoT",
+      "type": "microcontroller",
+      "short_description": "Low-cost, Wi-Fi enabled microcontrollers for IoT projects.",
+      "long_description": "ESP32 and ESP8266 are popular IoT development boards with built-in Wi-Fi, GPIO pins, and low power consumption, ideal for connected devices and smart home projects.",
+      "tags": ["iot", "microcontroller", "wifi", "embedded", "arduino-compatible"],
+      "more_info_link": "https://www.espressif.com/en/products/socs/esp32",
+      "examples": ["Smart home devices", "Weather stations", "IoT sensors", "Home automation"],
+      "difficulty": "medium"
+    },
+    {
+      "id": 69,
+      "name": "VS Code Extensions",
+      "category": "Development Tools",
+      "type": "tool",
+      "short_description": "Plugins that extend Visual Studio Code functionality for various programming languages and workflows.",
+      "long_description": "Extensions enhance VS Code with language support, debugging, linting, theming, and productivity features, creating a customized development environment.",
+      "tags": ["development", "tools", "ide", "productivity", "extensions"],
+      "more_info_link": "https://code.visualstudio.com/docs/editor/extension-marketplace",
+      "examples": ["Python extension for IntelliSense", "GitLens for version control", "Live Share for collaborative coding"],
+      "difficulty": "easy"
+    }
+
+  ]
+}
+
+
